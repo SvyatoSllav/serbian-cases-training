@@ -25,7 +25,7 @@ INSTALLED_APPS = [
     # Библиотеки
     'rest_framework',
     'django_filters',
-
+    'cases',
 ]
 
 MIDDLEWARE = [
