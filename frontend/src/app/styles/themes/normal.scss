@@ -1,8 +1,31 @@
 :root {
-    --bg-color: #e8e8ea;
-    --inverted-bg-color: #090949;
-    --primary-color: #0232c2;
-    --secondary-color: #0449e0;
-    --inverted-primary-color: #049604;
-    --inverted-secondary-color: #04ff04;
+    /* Основные цвета интерфейса */
+    --primary-bg-color: #fff9e6; /* Основной цвет фона */
+    --secondary-bg-color: #f9e79f; /* Фон для заголовков секций и таблиц */
+    --highlight-bg-color: #fdf3d3; /* Для выделения элементов */
+    --accent-color: #d9b664; /* Акцентные линии и границы */
+    --error-color: #e74c3c; /* Для отображения ошибок */
+    --success-color: #27ae60; /* Для правильных ответов */
+    --neutral-color: #f1c40f; /* Нейтральные элементы, например, подсказки */
+
+    /* Цвета текста */
+    --text-primary-color: #8b6914; /* Основной цвет текста */
+    --text-secondary-color: #333; /* Цвет текста в таблицах */
+    --text-inverted-color: #fff; /* Цвет текста на тёмных кнопках */
+
+    /* Цвета кнопок */
+    --button-bg-color: #0449e0; /* Фон кнопок */
+    --button-hover-bg-color: #0232c2; /* Фон кнопок при наведении */
+    --button-text-color: #fff; /* Текст кнопок */
+
+    /* Цвета для таблиц */
+    --table-border-color: #e0c775; /* Границы таблиц */
+    --table-alt-row-color: #fcf7e3; /* Фон для чередующихся строк */
+
+    /* Цвета интерактивных элементов */
+    --dropdown-bg-color: #fff; /* Фон выпадающего списка */
+    --dropdown-hover-bg-color: #f4e3b0; /* Фон при наведении на элемент списка */
+
+    /* Тени */
+    --box-shadow-color: rgba(0, 0, 0, 0.1); /* Цвет тени */
 }

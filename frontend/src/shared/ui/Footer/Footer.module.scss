@@ -1,0 +1,10 @@
+.footer {
+    width: 100%;
+    background: var(--primary-bg-color);
+    text-align: center;
+    padding: 1rem;
+    color: var(--text-primary-color);
+    border-top: 1px solid var(--table-border-color);
+    box-shadow: 0 -2px 4px var(--box-shadow-color);
+    margin-top: auto;
+}

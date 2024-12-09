@@ -1,16 +1,25 @@
 .Navbar {
-    width: 100%;
-    height: var(--navbar-height);
-    background: var(--inverted-bg-color);
     display: flex;
+    flex: 1; /* Занимает оставшееся пространство */
     align-items: center;
-    padding: 20px;
+    justify-content: flex-start; /* Выравнивание ссылок слева */
+    height: var(--navbar-height);
 }
 
 .links {
-    margin-left: auto;
+    margin-left: auto; /* Отодвигаем ссылки вправо */
+    display: flex;
+    align-items: center;
 }
 
 .mainLink {
-    margin-right: 15px;
+    margin-right: 25px; /* Отступы между ссылками */
+    font-size: var(--font-size-l); /* Размер текста ссылок */
+    color: var(--text-primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.mainLink:hover {
+    color: var(--accent-color); /* Цвет ссылки при наведении */
 }

@@ -1,0 +1,21 @@
+.header {
+    width: 100%;
+    background-color: var(--primary-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 var(--padding-base);
+    border-bottom: 1px solid var(--table-border-color);
+    box-shadow: 0 2px 4px var(--box-shadow-color);
+    height: var(--navbar-height);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.logo img {
+    height: 80%;
+}

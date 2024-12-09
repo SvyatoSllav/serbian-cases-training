@@ -3,8 +3,8 @@ import './styles/index.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { AppRouter } from 'app/providers/router';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
+import { Header } from 'shared/ui/Header/Header';
+import { Footer } from 'shared/ui/Footer/Footer';
 
 function App() {
     const { theme } = useTheme();
@@ -12,11 +12,11 @@ function App() {
     return (
         <div className={classNames('app', {}, [theme])}>
             <Suspense fallback="">
-                <Navbar />
+                <Header />
                 <div className="content-page">
-                    <Sidebar />
                     <AppRouter />
                 </div>
+                <Footer />
             </Suspense>
         </div>
     );
