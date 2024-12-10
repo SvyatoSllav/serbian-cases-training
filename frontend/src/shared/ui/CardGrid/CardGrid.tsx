@@ -1,27 +1,31 @@
 import { classNames } from 'shared/lib/classNames/classNames';
+import NominativeIcon from 'shared/assets/icons/card/nominative.svg';
+import GenitiveIcon from 'shared/assets/icons/card/genitive.svg';
+import LocativeIcon from 'shared/assets/icons/card/locative.svg';
+import AccusativeIcon from 'shared/assets/icons/card/accusative.svg';
+import OtherIcon from 'shared/assets/icons/card/other.svg';
 import { Card } from 'shared/ui/Card/Card';
-import nominativeIcon from 'shared/assets/icons/nominative.svg';
-import genitiveIcon from 'shared/assets/icons/genitive.svg';
 import cls from './CardGrid.module.scss';
 
 interface CardGridProps {
     className?: string;
 }
 
-const cardData = [
-    { title: 'Номинатив', icon: nominativeIcon },
-    { title: 'Генетив', icon: genitiveIcon },
-    // Add more cards
+const cards = [
+    { title: 'Номенотив', Icon: NominativeIcon },
+    { title: 'Генетив', Icon: GenitiveIcon },
+    { title: 'Локатив', Icon: LocativeIcon },
+    { title: 'Акузатив', Icon: AccusativeIcon },
+    { title: 'Датив', Icon: OtherIcon },
+    { title: 'Инструментал', Icon: OtherIcon },
+    { title: 'Вокатив', Icon: OtherIcon },
+    { title: 'Микс', Icon: OtherIcon },
 ];
 
-interface CardGridProps {
-  className?: string;
-}
-
 export const CardGrid = ({ className }: CardGridProps) => (
-    <div className={classNames(cls.grid, {}, [className])}>
-        {cardData.map((card) => (
-            <Card title={card.title} icon={card.icon} />
+    <div className={classNames(cls.cardGrid, {}, [className])}>
+        {cards.map((card) => (
+            <Card title={card.title} Icon={card.Icon} />
         ))}
     </div>
 );

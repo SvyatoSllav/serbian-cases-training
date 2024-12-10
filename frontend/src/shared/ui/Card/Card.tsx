@@ -1,15 +1,18 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { VFC, SVGProps } from 'react';
+import React from 'react';
 import cls from './Card.module.scss';
 
 interface CardProps {
-    title: string;
-    icon: VFC<SVGProps<SVGSVGElement>>;
     className?: string;
+    title: string;
+    Icon: React.FC<React.SVGProps<SVGSVGElement>>; // SVG icon component
 }
 
-export const Card = ({ title, icon, className }: CardProps) => (
+export const Card = ({ className, title, Icon }: CardProps) => (
     <div className={classNames(cls.card, {}, [className])}>
-        <p className={cls.title}>{title}</p>
+        <div className={cls.icon}>
+            <Icon />
+        </div>
+        <span className={cls.title}>{title}</span>
     </div>
 );

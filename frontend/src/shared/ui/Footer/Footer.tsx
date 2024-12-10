@@ -6,11 +6,9 @@ interface FooterProps {
     className?: string;
 }
 
-export const Footer = ({ className }: FooterProps) => {
-    return (
-        <div className={classNames(cls.footer, {}, [className])}>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
-            <span>© 2024 Native Serbian</span>
-        </div>
-    );
-};
+export const Footer = ({ className }: FooterProps) => (
+    <div className={classNames(cls.footer, {}, [className])}>
+        {/* eslint-disable-next-line i18next/no-literal-string */}
+        <span>© 2024 Native Serbian</span>
+    </div>
+);

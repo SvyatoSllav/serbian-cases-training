@@ -1,15 +1,18 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import { BugButton } from 'app/providers/ErrorBoundary';
+import { CardGrid } from 'shared/ui/CardGrid/CardGrid';
+import { classNames } from 'shared/lib/classNames/classNames';
+import cls from './MainPage.module.scss';
 
-const MainPage = () => {
-    const { t } = useTranslation();
+interface MainPageProps {
+    className?: string;
+}
 
-    return (
-        <div>
-            {t('Главная страница')}
-        </div>
-    );
-};
-
-export default MainPage;
+export const MainPage = ({ className }: MainPageProps) => (
+    <div className={classNames(cls.mainPage, {}, [className])}>
+        <h1 className={cls.mainPageHeader}>
+            {/* eslint-disable-next-line i18next/no-literal-string */}
+            Выберите тему тренировки и правильно поставьте вариант падежа. Уживаjте!
+        </h1>
+        <CardGrid />
+    </div>
+);

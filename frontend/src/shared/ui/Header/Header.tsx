@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
-import Logo from 'shared/assets/icons/logo.svg'; // Импортируем лого как картинку
+import Logo from 'shared/assets/icons/logo.svg';
+import { FeedbackForm } from 'shared/ui/FeedBackForm/FeedBackForm';
 import cls from './Header.module.scss';
 
 interface HeaderProps {
@@ -13,5 +14,6 @@ export const Header = ({ className }: HeaderProps) => (
             <Logo />
         </div>
         <Navbar />
+        <FeedbackForm />
     </div>
 );

@@ -1,0 +1,15 @@
+.cardGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(281px, 1fr));
+    gap: 24px;
+    justify-content: center; /
+    justify-items: center;
+    align-items: center;
+    padding: 24px;
+    background-color: var(--bg-color);
+
+    @media (min-width: calc(281px * 4 + 24px * 3)) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

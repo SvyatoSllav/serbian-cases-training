@@ -1,0 +1,15 @@
+.mainPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--bg-color);
+    color: var(--text-primary-color);
+}
+
+.mainPageHeader {
+    font: var(--font-l);
+    color: var(--text-primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
