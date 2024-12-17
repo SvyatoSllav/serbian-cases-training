@@ -1,12 +1,15 @@
 :root {
     /* Основные цвета интерфейса */
     --primary-bg-color: #fff9e6; /* Основной цвет фона */
-    --secondary-bg-color: #f9e79f; /* Фон для заголовков секций и таблиц */
+    //--secondary-bg-color: #f9e79f; /* Фон для заголовков секций и таблиц */
+    --secondary-bg-color: #F3E8BF;
+    --card-bg-color: #F8E0C6;
     --highlight-bg-color: #fdf3d3; /* Для выделения элементов */
     --accent-color: #d9b664; /* Акцентные линии и границы */
     --error-color: #e74c3c; /* Для отображения ошибок */
     --success-color: #27ae60; /* Для правильных ответов */
     --neutral-color: #f1c40f; /* Нейтральные элементы, например, подсказки */
+    --page-bg-color: #FBF2E9;
 
     /* Цвета текста */
     --text-primary-color: #8b6914; /* Основной цвет текста */

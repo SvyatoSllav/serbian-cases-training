@@ -1,91 +1,141 @@
 .taskForm {
-    background: var(--bg-color); // Фон формы
-    padding: 24px; // Внутренний отступ
-    border-radius: 10px; // Скругленные углы
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Тень
-    min-width: 400px; // Минимальная ширина
-    max-width: 600px; // Максимальная ширина
-    width: 100%; // Адаптивная ширина
+    background: var(--bg-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    min-width: 400px;
+    max-width: 600px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px; // Расстояние между элементами
-    z-index: 1001; // Поверх темного фона
-    position: relative; // Для абсолютного позиционирования кнопки закрытия
+    gap: 16px;
+    position: relative;
 }
 
 .closeButton {
     position: absolute;
-    top: 16px; // Отступ от верхнего края
-    right: 16px; // Отступ от правого края
+    top: 16px;
+    right: 16px;
     background: none;
     border: none;
-    font-size: 50px;
+    font-size: 24px;
     cursor: pointer;
-    color: var(--text-secondary-color); // Цвет кнопки
+    color: var(--text-secondary-color);
     font-weight: bold;
 }
 
-h2 {
-    font-size: var(--font-size-l); // Размер заголовка
-    color: var(--text-secondary-color); // Цвет текста
+.title {
+    font-size: var(--font-size-l);
+    color: var(--text-secondary-color);
+    text-align: center;
     margin: 0;
-    text-align: center; // Выравнивание по центру
 }
 
 .question {
-    font-size: var(--font-size-l); // Размер заголовка
-    color: var(--text-secondary-color); // Цвет текста
+    font-size: var(--font-size-l);
+    color: var(--text-secondary-color);
+    text-align: center;
     margin: 0;
-    text-align: center; // Выравнивание по центру
 }
 
 .options {
     display: flex;
-    flex-wrap: wrap; // Перенос кнопок на следующую строку при необходимости
     justify-content: center;
-    gap: 12px; // Расстояние между кнопками
+    gap: 12px;
     width: 100%;
 }
 
 .optionButton {
-    background: var(--accent-color); // Цвет кнопки
-    color: var(--text-secondary-color); // Цвет текста
+    background: var(--accent-color);
+    color: var(--text-secondary-color);
     border: none;
-    border-radius: 8px; // Скругление кнопки
-    padding: 15px 30px;
-    font-size: var(--font-size-l); // Размер шрифта
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: var(--font-size-l);
     cursor: pointer;
     transition: background-color 0.3s ease;
 
     &:hover {
-        background: var(--secondary-bg-color); // Цвет кнопки при наведении
+        opacity: 0.7;
     }
 
-    &:active {
-        background: var(--accent-color-active); // Цвет кнопки при нажатии
+    &.correct {
+        background: #4caf50; // Зеленый цвет для правильного ответа
+        color: #fff;
+    }
+
+    &.incorrect {
+        background: #f44336; // Красный цвет для неправильного ответа
+        color: #fff;
     }
 }
 
+
+.hintContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+}
+
 .hintButton {
-    margin: 20px 0;
     background: var(--button-bg-color);
     color: var(--button-text-color);
-    border: 1px solid var(--primary-color); // Граница
+    border: none;
     border-radius: 8px;
     padding: 10px 20px;
-    font-size: var(--font-size-m); // Размер шрифта
+    font-size: var(--font-size-m);
     cursor: pointer;
     transition: all 0.3s ease;
 
     &:hover {
-
-        //background: var(--button-hover-bg-color);
         transform: scale(1.05);
-
     }
+}
 
-    &:active {
-        background: var(--primary-color-hover); // Фон при нажатии
+.hint {
+    background: var(--secondary-bg-color);
+    color: var(--text-secondary-color);
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 16px;
+    text-align: center;
+    white-space: nowrap;
+    flex: 0 1 auto;
+
+}
+
+.extraButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.extraButton {
+    background: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: var(--font-size-m);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
     }
+}
+
+.fullAnswer {
+    background: var(--secondary-bg-color);
+    color: var(--text-secondary-color);
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: var(--font-size-m);
+    text-align: left;
+    width: 100%;
+    margin-top: 0;
 }

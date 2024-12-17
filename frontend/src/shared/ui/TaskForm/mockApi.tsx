@@ -1,11 +1,13 @@
-export const getTaskData = (selectedCard: string) => {
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            resolve({
-                question: `Идемо у (парк) са (пси) и (деца)`,
-                options: ['парка', 'парку', 'парк'],
-                correctAnswer: 'парку',
-            });
-        }, 500); // Имитация задержки API
-    });
+export const getTaskData = async (cardTitle: string) => {
+    return {
+        question: 'Идемо у (парк) са (пси) и (деца).',
+        options: ['парка', 'парку', 'парк'],
+        hint: '- Акузатив, мужской род, единственное число',
+        correctOption: 'парку',
+        fullAnswer: `
+            парк - Акузатив, мужской род, единственное число
+            псима - Инструментал, мужской род, множественное число
+            децом - Инструментал, средний род, множественное число
+        `,
+    };
 };

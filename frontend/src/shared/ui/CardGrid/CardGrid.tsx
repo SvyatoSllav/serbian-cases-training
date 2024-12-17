@@ -46,15 +46,15 @@ export const CardGrid = ({ className }: CardGridProps) => {
                     title={card.title}
                     Icon={card.Icon}
                     className={cls.card}
-                    onClick={() => handleCardClick(card.title)} // Добавлен обработчик клика
+                    onClick={() => handleCardClick(card.title)}
                 />
             ))}
             {isFormVisible && (
                 <div className={cls.formOverlay}>
                     <TaskForm
                         className={cls.taskForm}
-                        selectedCard={selectedCard} // Передача выбранной карточки
-                        onClose={closeForm} // Функция для закрытия формы
+                        selectedCard={selectedCard}
+                        onClose={closeForm}
                     />
                 </div>
             )}

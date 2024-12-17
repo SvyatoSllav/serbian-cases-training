@@ -8,11 +8,13 @@ html, body {
     margin: 0;
     display: flex;
     flex-direction: column;
+    background: var(--page-bg-color);
 
 #root {
     display: flex;
     flex-direction: column;
     min-height: 100%;
+
 }
 
 .app {
@@ -28,14 +30,15 @@ html, body {
 .content-page {
     display: flex;
     flex-grow: 1;
+
 }
 
 .page-wrapper {
     flex-grow: 1;
-    padding: 20px;
+    padding: 0 20px;
     display: flex;
     flex-direction: column;
-    //background: var(--primary-bg-color);
+
 
 }
 

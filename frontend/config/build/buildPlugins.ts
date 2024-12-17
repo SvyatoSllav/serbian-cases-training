@@ -8,6 +8,11 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
     return [
         new HtmlWebpackPlugin({
             template: paths.html,
+            inject: true,
+            favicon: `${paths.public}/favicon.ico`,
+            templateParameters: {
+                PUBLIC_URL: '/',
+            },
         }),
         new webpack.ProgressPlugin(),
         new MiniCssExtractPlugin({
