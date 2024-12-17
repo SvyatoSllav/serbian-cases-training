@@ -1,0 +1,91 @@
+.taskForm {
+    background: var(--bg-color); // Фон формы
+    padding: 24px; // Внутренний отступ
+    border-radius: 10px; // Скругленные углы
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Тень
+    min-width: 400px; // Минимальная ширина
+    max-width: 600px; // Максимальная ширина
+    width: 100%; // Адаптивная ширина
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px; // Расстояние между элементами
+    z-index: 1001; // Поверх темного фона
+    position: relative; // Для абсолютного позиционирования кнопки закрытия
+}
+
+.closeButton {
+    position: absolute;
+    top: 16px; // Отступ от верхнего края
+    right: 16px; // Отступ от правого края
+    background: none;
+    border: none;
+    font-size: 50px;
+    cursor: pointer;
+    color: var(--text-secondary-color); // Цвет кнопки
+    font-weight: bold;
+}
+
+h2 {
+    font-size: var(--font-size-l); // Размер заголовка
+    color: var(--text-secondary-color); // Цвет текста
+    margin: 0;
+    text-align: center; // Выравнивание по центру
+}
+
+.question {
+    font-size: var(--font-size-l); // Размер заголовка
+    color: var(--text-secondary-color); // Цвет текста
+    margin: 0;
+    text-align: center; // Выравнивание по центру
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap; // Перенос кнопок на следующую строку при необходимости
+    justify-content: center;
+    gap: 12px; // Расстояние между кнопками
+    width: 100%;
+}
+
+.optionButton {
+    background: var(--accent-color); // Цвет кнопки
+    color: var(--text-secondary-color); // Цвет текста
+    border: none;
+    border-radius: 8px; // Скругление кнопки
+    padding: 15px 30px;
+    font-size: var(--font-size-l); // Размер шрифта
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background: var(--secondary-bg-color); // Цвет кнопки при наведении
+    }
+
+    &:active {
+        background: var(--accent-color-active); // Цвет кнопки при нажатии
+    }
+}
+
+.hintButton {
+    margin: 20px 0;
+    background: var(--button-bg-color);
+    color: var(--button-text-color);
+    border: 1px solid var(--primary-color); // Граница
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: var(--font-size-m); // Размер шрифта
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+
+        //background: var(--button-hover-bg-color);
+        transform: scale(1.05);
+
+    }
+
+    &:active {
+        background: var(--primary-color-hover); // Фон при нажатии
+    }
+}

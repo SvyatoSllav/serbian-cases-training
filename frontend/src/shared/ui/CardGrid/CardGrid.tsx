@@ -1,10 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useState } from 'react';
 import NominativeIcon from 'shared/assets/icons/card/nominative.svg';
 import GenitiveIcon from 'shared/assets/icons/card/genitive.svg';
 import LocativeIcon from 'shared/assets/icons/card/locative.svg';
 import AccusativeIcon from 'shared/assets/icons/card/accusative.svg';
 import OtherIcon from 'shared/assets/icons/card/other.svg';
 import { Card } from 'shared/ui/Card/Card';
+import { TaskForm } from 'shared/ui/TaskForm/TaskForm';
 import cls from './CardGrid.module.scss';
 
 interface CardGridProps {
@@ -22,10 +24,40 @@ const cards = [
     { title: 'Микс', Icon: OtherIcon },
 ];
 
-export const CardGrid = ({ className }: CardGridProps) => (
-    <div className={classNames(cls.cardGrid, {}, [className])}>
-        {cards.map((card) => (
-            <Card title={card.title} Icon={card.Icon} />
-        ))}
-    </div>
-);
+export const CardGrid = ({ className }: CardGridProps) => {
+    const [isFormVisible, setIsFormVisible] = useState(false);
+    const [selectedCard, setSelectedCard] = useState<string | null>(null);
+
+    const handleCardClick = (title: string) => {
+        setSelectedCard(title);
+        setIsFormVisible(true);
+    };
+
+    const closeForm = () => {
+        setIsFormVisible(false);
+        setSelectedCard(null);
+    };
+
+    return (
+        <div className={classNames(cls.cardGrid, {}, [className])}>
+            {cards.map((card) => (
+                <Card
+                    key={card.title}
+                    title={card.title}
+                    Icon={card.Icon}
+                    className={cls.card}
+                    onClick={() => handleCardClick(card.title)} // Добавлен обработчик клика
+                />
+            ))}
+            {isFormVisible && (
+                <div className={cls.formOverlay}>
+                    <TaskForm
+                        className={cls.taskForm}
+                        selectedCard={selectedCard} // Передача выбранной карточки
+                        onClose={closeForm} // Функция для закрытия формы
+                    />
+                </div>
+            )}
+        </div>
+    );
+};
