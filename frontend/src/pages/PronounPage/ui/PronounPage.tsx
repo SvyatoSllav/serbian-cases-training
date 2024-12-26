@@ -13,8 +13,8 @@ export const PronounPage = ({ className }: PronounPageProps) => (
         <h2 className={cls.title}>
             Местоимения
         </h2>
-        {pronounData.sections.map((section) => (
-            <div className={cls.section}>
+        {pronounData.sections.map((section, sectionIndex) => (
+            <div className={cls.section} key={`section-${sectionIndex}`}>
                 <PronounTable
                     className={cls.table}
                     headers={section.headers}

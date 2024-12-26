@@ -24,27 +24,31 @@ export const PronounTable = ({
         <table className={cls.table}>
             <thead>
                 <tr>
-                    {headers.map((header, index) => (
-                        <th colSpan={subHeaders?.[index]?.columns.length || 1}>
+                    {headers.map((header) => (
+                        <th
+                            key={header} // Используем значение заголовка как ключ
+                            colSpan={subHeaders?.find((sh) => sh.title === header)?.columns.length || 1}
+                        >
                             {header}
                         </th>
                     ))}
                 </tr>
                 {subHeaders && (
                     <tr>
-                        {subHeaders.map((subHeader) => subHeader.columns.map((col) => (
-                            <th>{col}</th>
+                        {subHeaders.flatMap((subHeader) => subHeader.columns.map((col) => (
+                            <th key={`${subHeader.title}-${col}`}>{col}</th>
                         )))}
                     </tr>
                 )}
             </thead>
             <tbody>
-                {rows.map((row) => (
-                    <tr>
-                        {/* eslint-disable-next-line max-len */}
-                        {headers.flatMap((header, headerIndex) => subHeaders?.[headerIndex]?.columns.map((col) => (
-                            <td>{row[col]}</td>
-                        )) || <td>{row[header]}</td>)}
+                {rows.map((row, rowIndex) => (
+                    <tr key={`row-${rowIndex}`}>
+                        {headers.flatMap((header) => (
+                            subHeaders?.find((sh) => sh.title === header)?.columns.map((col) => (
+                                <td key={`${header}-${col}`}>{row[col]}</td>
+                            )) || <td key={`${header}-default`}>{row[header]}</td>
+                        ))}
                     </tr>
                 ))}
             </tbody>
