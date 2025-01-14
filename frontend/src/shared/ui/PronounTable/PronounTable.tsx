@@ -7,7 +7,7 @@ interface SubHeader {
 }
 
 interface Row {
-    [key: string]: string | undefined; // Ключ — название колонки, значение — содержимое
+    [key: string]: string | undefined;
 }
 
 interface PronounTableProps {
@@ -24,10 +24,10 @@ export const PronounTable = ({
         <table className={cls.table}>
             <thead>
                 <tr>
-                    {headers.map((header) => (
+                    {headers.map((header, index) => (
                         <th
-                            key={header} // Используем значение заголовка как ключ
-                            colSpan={subHeaders?.find((sh) => sh.title === header)?.columns.length || 1}
+                            key={`header-${index}`} // Уникальный ключ
+                            colSpan={subHeaders?.[index]?.columns.length || 1}
                         >
                             {header}
                         </th>
@@ -35,19 +35,26 @@ export const PronounTable = ({
                 </tr>
                 {subHeaders && (
                     <tr>
-                        {subHeaders.flatMap((subHeader) => subHeader.columns.map((col) => (
-                            <th key={`${subHeader.title}-${col}`}>{col}</th>
+                        {subHeaders.flatMap((subHeader, subHeaderIndex) => subHeader.columns.map((col, colIndex) => (
+                            <th key={`subHeader-${subHeaderIndex}-${colIndex}`}>
+                                {col}
+                            </th>
                         )))}
                     </tr>
                 )}
             </thead>
             <tbody>
                 {rows.map((row, rowIndex) => (
+                    // eslint-disable-next-line react/no-array-index-key
                     <tr key={`row-${rowIndex}`}>
-                        {headers.flatMap((header) => (
-                            subHeaders?.find((sh) => sh.title === header)?.columns.map((col) => (
-                                <td key={`${header}-${col}`}>{row[col]}</td>
-                            )) || <td key={`${header}-default`}>{row[header]}</td>
+                        {headers.flatMap((header, headerIndex) => subHeaders?.[headerIndex]?.columns.map((col, colIndex) => (
+                            <td key={`cell-${rowIndex}-${headerIndex}-${colIndex}`}>
+                                {row[col]}
+                            </td>
+                        )) || (
+                            <td key={`cell-${rowIndex}-${headerIndex}-default`}>
+                                {row[header]}
+                            </td>
                         ))}
                     </tr>
                 ))}
