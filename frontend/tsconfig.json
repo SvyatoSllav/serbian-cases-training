@@ -24,6 +24,7 @@
     // console.log(Moment);
     // c флагом результат [object Object]
     // console.log(Moment);
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     // Если какая-либо библиотека не имеет default import,
     // лоадеры вроде ts-loader или babel-loader автоматически создают их
@@ -43,5 +44,6 @@
     "./config/jest/setupTests.ts",
     "./src/**/*.ts",
     "./src/**/*tsx",
+    "./src/**/*json",
   ]
 }

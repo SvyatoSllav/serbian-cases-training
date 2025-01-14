@@ -50,14 +50,12 @@ export const CardGrid = ({ className }: CardGridProps) => {
                 />
             ))}
             {isFormVisible && (
-                <div className={cls.formOverlay}>
-                    <TaskForm
-                        className={cls.taskForm}
-                        selectedCard={selectedCard}
-                        onClose={closeForm}
-                    />
-                </div>
+                <TaskForm
+                    selectedCard={selectedCard}
+                    onClose={closeForm}
+                />
             )}
+
         </div>
     );
 };
