@@ -1,35 +1,35 @@
 .pronounTable {
-  margin: 2rem auto;
-  padding: 1rem;
-  background-color: var(--primary-bg-color);
-  border: 1px solid var(--table-border-color);
-  border-radius: 8px;
-  box-shadow: 0 4px 6px var(--box-shadow-color);
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: var(--primary-bg-color);
+    border: 1px solid var(--table-border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--box-shadow-color);
 }
 
 .table {
-  width: 100%;
-  border-collapse: collapse;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .table th,
 .table td {
-  padding: 0.5rem;
-  text-align: center;
-  border: 1px solid var(--table-border-color);
+    padding: 0.5rem;
+    text-align: center;
+    border: 1px solid var(--table-border-color);
 }
 
 .table th {
-  background-color: var(--secondary-bg-color);
-  font-weight: bold;
-  color: var(--text-primary-color);
+    background-color: var(--secondary-bg-color);
+    font-weight: bold;
+    color: var(--text-primary-color);
 }
 
 .table td {
-  background-color: var(--highlight-bg-color);
-  color: var(--text-secondary-color);
+    background-color: var(--highlight-bg-color);
+    color: var(--text-secondary-color);
 }
 
 .table tr:nth-child(even) td {
-  background-color: var(--primary-bg-color);
+    background-color: var(--primary-bg-color);
 }
