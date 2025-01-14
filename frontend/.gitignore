@@ -1,4 +1,7 @@
-
+!/frontend/
+!frontend/src/shared/lib
+!frontend/config/build
+!frontend/src/app/providers/ThemeProvider/lib
 node_modules
 .idea
 
